@@ -1,13 +1,11 @@
 package HomeWork_1;
 
-public class HotDrinkMachine implements VendingMachine{
-    @Override
-    public HotDrink getProduct(String name, int volume,int temperture){
-        return new HotDrink(name,volume,temperture);
+public class HotDrinkMachine implements VendingMachine {
+    public HotDrink getHotDrink(String name, int volume,int temperature, int price){
+        return new HotDrink(name,volume,temperature,price);
 
     }
-    @Override
-    public Product getProduct(String name, int volume) {
-        return  new Product (name, volume);
+    public Product getProduct(String name, int volume, int price) {
+        return  new Product (name, volume, price);
     }
 }
