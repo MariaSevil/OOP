@@ -1,6 +1,6 @@
 package HomeWork_1;
 
-public class Product implements Sellable {
+public class Product implements Sellable, java.lang.Comparable<Product> {
     private String name;
     private int volume;
     private int price;
@@ -34,6 +34,9 @@ public class Product implements Sellable {
     }
     public String getProductDetails(){
         return this.name + " - " + this.volume + " ml -" + this.price + " rubles";
+    }
+    public int compareTo(Product other){
+        return Integer.compare(this.price,other.price);
     }
 }
 
