@@ -1,6 +1,6 @@
 package HomeWork_1;
 
 public interface VendingMachine {
-    Product getProduct( String name,int volume);
-    Product getProduct( String name, int volume, int temperature);
+   HotDrink getHotDrink( String name,int volume, int temperature, int price);
+    Product getProduct( String name, int volume, int price);
 }
