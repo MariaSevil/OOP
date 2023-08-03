@@ -8,15 +8,31 @@ public class Market implements MarketBehaviour {
         queue.add(person);
     }
     public Person dequeue() {
-        return queue.poll();
+        if (!queue.isEmpty()){
+            return queue.poll();
+        }
+        return null;
     }
     public void addPerson(Person person) {
         enqueue(person);
     }
     public void removePerson(Person person) {
-        queue.remove(person);
+        if (person !=null){
+            queue.remove(person);
+        }
     }
     public void update() {
         // обновить состояние магазина...
+        processOrders();
     }
+   public void processOrders(){
+        while ((!queue.isEmpty())){
+            Person person = dequeue();
+            // Обработать заказ персоны
+        }
+   }
+   public boolean hasPerson(Person person){
+        return queue.contains(person);
+   }
 }
+

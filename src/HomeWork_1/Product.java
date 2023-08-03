@@ -5,7 +5,10 @@ public class Product implements Sellable {
     private int volume;
     private int price;
 
-    public Product(String name, int volume, int price) {
+    public Product(String name, int volume, int price){
+        if (price < 0){
+            throw new IllegalArgumentException("Price cannot be negative");
+        }
         this.name = name;
         this.volume = volume;
         this.price = price;
@@ -20,7 +23,7 @@ public class Product implements Sellable {
     }
 
     public Product getProduct(String name, int volume) {
-        if (volume > Sellable.MAX_VOLUME) {
+        if (volume > MAX_VOLUME) {
             System.out.println("The requested volume is too large");
             return null;
         }
@@ -28,6 +31,9 @@ public class Product implements Sellable {
     }
     public int getPrice(){
         return this.price;
+    }
+    public String getProductDetails(){
+        return this.name + " - " + this.volume + " ml -" + this.price + " rubles";
     }
 }
 
