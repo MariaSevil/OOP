@@ -34,5 +34,8 @@ public class Market implements MarketBehaviour {
    public boolean hasPerson(Person person){
         return queue.contains(person);
    }
+   public void processOrder(Person person){
+        //Реализация обработки заказа для данного человека
+   }
 }
 
